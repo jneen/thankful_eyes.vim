@@ -239,6 +239,7 @@ let s:pink_merengue  = "F696DB"
 let s:dune           = "FFF0A6"
 let s:backlit        = "4DF4FF"
 let s:schrill        = "ffb000"
+let s:black          = "000000"
 
 let s:search         = "c0c000"
 
@@ -247,9 +248,9 @@ let s:search         = "c0c000"
 call <SID>X("Normal",     s:unicorn,        s:krasna,      ""      )
 call <SID>X("Visual",     s:aluminium1,     s:cool_as_ice, ""      )
 call <SID>X("Cursor",     s:cool_as_ice,    "",            ""      )
-call <SID>X("CursorLine", "",               s:slate_blue,  "none"  )
-call <SID>X("StatusLine", "",               s:slate_blue,  ""      )
-call <SID>X("LineNr",     "",               s:slate_blue,  ""      )
+call <SID>X("CursorLine", "",               s:black,       "none"  )
+call <SID>X("StatusLine", "",               s:black,       ""      )
+call <SID>X("LineNr",     "",               s:black,       ""      )
 
 " Bracket Matching
 "          Group         Foreground        Background     Mode
