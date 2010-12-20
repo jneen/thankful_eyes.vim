@@ -241,7 +241,7 @@ let s:backlit        = "4DF4FF"
 let s:schrill        = "ffb000"
 let s:black          = "000000"
 
-let s:search         = "c0c000"
+let s:yellow         = "c0c000"
 
 " Global settings
 "          Group         Foreground        Background     Mode
@@ -286,6 +286,6 @@ call <SID>X("Error",      s:aluminium1,     s:scarletred2, "bold"  )
 call <SID>X("Todo",       s:slate_blue,     s:unicorn,     "bold"  )
 call <SID>X("Underlined", "",               "",            "italic")
 
-call <SID>X("Search",     "",               s:search,      ""      )
+call <SID>X("Search",     "",               s:yellow,      ""      )
 
 " vim: set fdl=0 fdm=marker:
