@@ -5,10 +5,10 @@
 
 set background=dark
 hi clear
-if exists("syntax_on")
+if exists('syntax_on')
     syntax reset
 endif
-let g:colors_name="thankful_eyes"
+let g:colors_name='thankful_eyes'
 
 " functions {{{
 " returns an approximate grey index for the given grey level
@@ -198,23 +198,23 @@ endfun
 
 " returns the palette index to approximate the 'rrggbb' hex string
 fun! <SID>rgb(rgb)
-    let l:r = ("0x" . strpart(a:rgb, 0, 2)) + 0
-    let l:g = ("0x" . strpart(a:rgb, 2, 2)) + 0
-    let l:b = ("0x" . strpart(a:rgb, 4, 2)) + 0
+    let l:r = ('0x' . strpart(a:rgb, 0, 2)) + 0
+    let l:g = ('0x' . strpart(a:rgb, 2, 2)) + 0
+    let l:b = ('0x' . strpart(a:rgb, 4, 2)) + 0
 
     return <SID>color(l:r, l:g, l:b)
 endfun
 
 " sets the highlighting for the given group
 fun! <SID>X(group, fg, bg, attr)
-    if a:fg != ""
-        exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=" . <SID>rgb(a:fg)
+    if a:fg != ''
+        exec 'hi ' . a:group . ' guifg=#' . a:fg . ' ctermfg=' . <SID>rgb(a:fg)
     endif
-    if a:bg != ""
-        exec "hi " . a:group . " guibg=#" . a:bg . " ctermbg=" . <SID>rgb(a:bg)
+    if a:bg != ''
+        exec 'hi ' . a:group . ' guibg=#' . a:bg . ' ctermbg=' . <SID>rgb(a:bg)
     endif
-    if a:attr != ""
-        exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+    if a:attr != ''
+        exec 'hi ' . a:group . ' gui=' . a:attr . ' cterm=' . a:attr
     endif
 endfun
 " }}}
@@ -224,68 +224,68 @@ hi Normal  ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 hi NonText ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 
 " Basic pallette
-let s:cool_as_ice    = "6c8b9f"
-let s:slate_blue     = "4e5d62"
-let s:eggshell_cloud = "dee5e7"
-let s:krasna         = "122B3B"
-let s:aluminium1     = "fefeec"
-let s:scarletred2    = "cc0000"
-let s:butter3        = "c4a000"
-let s:go_get_it      = "B2FD6D"
-let s:chilly         = "A8E1FE"
-let s:unicorn        = "faf6e4"
-let s:sandy          = "F6DD62"
-let s:pink_merengue  = "F696DB"
-let s:dune           = "FFF0A6"
-let s:backlit        = "4DF4FF"
-let s:schrill        = "ffb000"
-let s:black          = "000000"
+let s:cool_as_ice    = '6c8b9f'
+let s:slate_blue     = '4e5d62'
+let s:eggshell_cloud = 'dee5e7'
+let s:krasna         = '122B3B'
+let s:aluminium1     = 'fefeec'
+let s:scarletred2    = 'cc0000'
+let s:butter3        = 'c4a000'
+let s:go_get_it      = 'B2FD6D'
+let s:chilly         = 'A8E1FE'
+let s:unicorn        = 'faf6e4'
+let s:sandy          = 'F6DD62'
+let s:pink_merengue  = 'F696DB'
+let s:dune           = 'FFF0A6'
+let s:backlit        = '4DF4FF'
+let s:schrill        = 'ffb000'
+let s:black          = '000000'
 
-let s:yellow         = "c0c000"
+let s:yellow         = 'c0c000'
 
 " Global settings
 "          Group         Foreground        Background     Mode
-call <SID>X("Normal",     s:unicorn,        s:krasna,      ""      )
-call <SID>X("Visual",     s:aluminium1,     s:cool_as_ice, ""      )
-call <SID>X("Cursor",     s:cool_as_ice,    "",            ""      )
-call <SID>X("CursorLine", "",               s:black,       "none"  )
-call <SID>X("StatusLine", "",               s:black,       ""      )
-call <SID>X("LineNr",     "",               s:black,       ""      )
+call <SID>X('Normal',     s:unicorn,        s:krasna,      ''      )
+call <SID>X('Visual',     s:aluminium1,     s:cool_as_ice, ''      )
+call <SID>X('Cursor',     s:cool_as_ice,    '',            ''      )
+call <SID>X('CursorLine', '',               s:black,       'none'  )
+call <SID>X('StatusLine', '',               s:black,       ''      )
+call <SID>X('LineNr',     '',               s:black,       ''      )
 
 " Bracket Matching
 "          Group         Foreground        Background     Mode
-call <SID>X("MatchParen", s:eggshell_cloud, s:butter3,     ""      )
+call <SID>X('MatchParen', s:eggshell_cloud, s:butter3,     ''      )
 
 " Comments
 "          Group         Foreground        Background     Mode
-call <SID>X("Comment",    s:cool_as_ice,    "",            ""      )
+call <SID>X('Comment',    s:cool_as_ice,    '',            ''      )
 
 " Constants
 "          Group         Foreground        Background     Mode
-call <SID>X("Constant",   s:pink_merengue,  "",            "bold"  )
-call <SID>X("String",     s:dune,           "",            "bold"  )
-call <SID>X("SpecialChar",s:backlit,        "",            "bold"  )
-call <SID>X("Special",    s:schrill,        "",            "bold"  )
+call <SID>X('Constant',   s:pink_merengue,  '',            'bold'  )
+call <SID>X('String',     s:dune,           '',            'bold'  )
+call <SID>X('SpecialChar',s:backlit,        '',            'bold'  )
+call <SID>X('Special',    s:schrill,        '',            'bold'  )
 
 " Identifiers
 "          Group         Foreground        Background     Mode
-call <SID>X("Identifier", s:chilly,         "",            ""      )
+call <SID>X('Identifier', s:chilly,         '',            ''      )
 
 " Statements
 "          Group         Foreground        Background     Mode
-call <SID>X("Statement",  s:sandy,          "",            "bold"  )
+call <SID>X('Statement',  s:sandy,          '',            'bold'  )
 
 " Types
 "          Group         Foreground        Background     Mode
-call <SID>X("Type",       s:go_get_it,      "",            ""      )
+call <SID>X('Type',       s:go_get_it,      '',            ''      )
 
 " Others
 "          Group         Foreground        Background     Mode
-call <SID>X("PreProc",    s:go_get_it,      "",            "bold"  )
-call <SID>X("Error",      s:aluminium1,     s:scarletred2, "bold"  )
-call <SID>X("Todo",       s:slate_blue,     s:unicorn,     "bold"  )
-call <SID>X("Underlined", "",               "",            "italic")
+call <SID>X('PreProc',    s:go_get_it,      '',            'bold'  )
+call <SID>X('Error',      s:aluminium1,     s:scarletred2, 'bold'  )
+call <SID>X('Todo',       s:slate_blue,     s:unicorn,     'bold'  )
+call <SID>X('Underlined', '',               '',            'italic')
 
-call <SID>X("Search",     "",               s:yellow,      ""      )
+call <SID>X('Search',     '',               s:yellow,      ''      )
 
 " vim: set fdl=0 fdm=marker:
