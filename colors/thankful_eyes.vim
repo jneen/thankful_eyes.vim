@@ -308,6 +308,7 @@ call <SID>X('Constant',   s:pink_merengue,  '',              'bold'  )
 call <SID>X('String',     s:dune,           '',              'bold'  )
 call <SID>X('SpecialChar',s:backlit,        '',              'bold'  )
 call <SID>X('Special',    s:schrill,        '',              'bold'  )
+call <SID>X('Delimiter',  s:schrill,        '',              'bold'  )
 
 " Identifiers
 "           Group         Foreground        Background       Mode
